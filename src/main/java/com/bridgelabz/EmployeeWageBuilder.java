@@ -6,6 +6,8 @@ public class EmployeeWageBuilder {
         int IS_PRESENT = 1;
         int WAGE_PER_HOUR = 20;
         int PART_TIME_HOUR = 8;
+        int WORKING_DAY_PER_MONTH=20;
+        int monthlyWage=0;
         int empHrs = 0;
         int dailyEmpWage = 0;
         int partTimeWage = 0;
@@ -21,11 +23,7 @@ public class EmployeeWageBuilder {
                 }
                 break;
             case 1:
-                if (employee == IS_PRESENT) {
-                    empHrs = 8;
-                } else {
-                    empHrs = 0;
-                }
+                empHrs = 8;
                 dailyEmpWage = empHrs * WAGE_PER_HOUR;
                 System.out.println("Daily employee wage:" + dailyEmpWage);
                 break;
@@ -37,7 +35,10 @@ public class EmployeeWageBuilder {
             default:
                 System.out.println("Wrong choice");
 
-
         }
+        empHrs=8;
+        dailyEmpWage = empHrs * WAGE_PER_HOUR;
+        monthlyWage=(WORKING_DAY_PER_MONTH*dailyEmpWage);
+        System.out.println("Monthly Wages:"+monthlyWage);
     }
 }
