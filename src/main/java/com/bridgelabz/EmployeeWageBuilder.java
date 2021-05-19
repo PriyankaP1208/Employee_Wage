@@ -1,24 +1,43 @@
 package com.bridgelabz;
 
 public class EmployeeWageBuilder {
-    public static void main(String args[]) {
-        int IS_FULL_TIME=1;
-        int IS_PART_TIME=2;
-        int WAGE_PER_HOUR=20;
-        int empHrs=0;
-        int dailyEmpWage=0;
-        double partTimeWage=0;
-        double empCheck=Math.floor(Math.random()*10)%3;
-        if(empCheck==IS_PART_TIME)
-            empHrs=4;
-        else if(empCheck==IS_FULL_TIME)
-            empHrs=8;
-        else
-            empHrs=0;
-        dailyEmpWage=empHrs*WAGE_PER_HOUR;
-        System.out.println("Daily employee wage:"+dailyEmpWage);
-        double partTimeHours=Math.floor(Math.random()*10)%8;
-        partTimeWage=(partTimeHours*WAGE_PER_HOUR);
-        System.out.println("Part time wage:"+partTimeWage);
+    public static void main(String[] args) {
+        double employee = employee = Math.floor(Math.random() * 10)%2;
+        int IS_PRESENT = 1;
+        int WAGE_PER_HOUR = 20;
+        int PART_TIME_HOUR = 8;
+        int empHrs = 0;
+        int dailyEmpWage = 0;
+        int partTimeWage = 0;
+        double empCheck = Math.floor(Math.random() * 10) % 3;
+        double no = Math.floor(Math.random() * 10) % 3;
+        System.out.println("Enter choice 0.Employee Attendance 1.Employee daily wage 2.Part time Wage" );
+        switch ((int) no) {
+            case 0:
+                if (employee == IS_PRESENT) {
+                    System.out.println("Employee is present");
+                } else {
+                    System.out.println("Employee is not present");
+                }
+                break;
+            case 1:
+                if (employee == IS_PRESENT) {
+                    empHrs = 8;
+                } else {
+                    empHrs = 0;
+                }
+                dailyEmpWage = empHrs * WAGE_PER_HOUR;
+                System.out.println("Daily employee wage:" + dailyEmpWage);
+                break;
+            case 2:
+                double emp = Math.floor(Math.random() * 8);
+                partTimeWage = (int) (emp * PART_TIME_HOUR);
+                System.out.println("Part time employee wage:" + partTimeWage);
+                break;
+            default:
+                System.out.println("Wrong choice");
+
+
+        }
     }
 }
