@@ -7,7 +7,9 @@ public class EmployeeWageBuilder {
         int WAGE_PER_HOUR = 20;
         int PART_TIME_HOUR = 8;
         int WORKING_DAY_PER_MONTH=20;
+        int days=0;
         int monthlyWage=0;
+        int totalMonthlyWage=0;
         int empHrs = 0;
         int dailyEmpWage = 0;
         int partTimeWage = 0;
@@ -40,5 +42,25 @@ public class EmployeeWageBuilder {
         dailyEmpWage = empHrs * WAGE_PER_HOUR;
         monthlyWage=(WORKING_DAY_PER_MONTH*dailyEmpWage);
         System.out.println("Monthly Wages:"+monthlyWage);
+        while(days<=20 && empHrs<=100)
+        {
+            double empCheck1=Math.floor(Math.random()*10)%1;
+            int empCheck2=(int)empCheck1;
+            switch(empCheck2)
+            {
+                case 0:
+                    empHrs=empHrs+4;
+                    break;
+                case 1:
+                    empHrs=empHrs+8;
+                    break;
+                default:
+                    System.out.println("Wrong choice");
+            }
+            days++;
+            dailyEmpWage=(empHrs*WAGE_PER_HOUR);
+            totalMonthlyWage=(totalMonthlyWage+dailyEmpWage);
+            System.out.println(dailyEmpWage+ " " + totalMonthlyWage + " ");
+        }
     }
 }
